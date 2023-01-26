@@ -1,17 +1,17 @@
 #include <WiFi.h>
 #include "time.h"
 #include "sntp.h"
-#include <LiquidCrystal_I2C.h>
+#include <LiquidCrystal_I2C.h> //I2C LCD control library
 
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+LiquidCrystal_I2C lcd(0x27, 16, 2); //(Address, number of characters per line, number of lines)
 
-const char* ssid       = "WIFI_SSID";
-const char* password   = "WIFI_PASS";
+const char* ssid       = "WIFI_SSID"; //customize with your own WIFI SSID
+const char* password   = "WIFI_PASS"; //customize with your own WIFI PASSWORD
 
 const char* ntpServer1 = "pool.ntp.org";
 const char* ntpServer2 = "time.nist.gov";
-const long  gmtOffset_sec = 3600;
-const int   daylightOffset_sec = 3600;
+const long  gmtOffset_sec = 3600; //Number of seconds offset for UTC time +1(3600 s = 1h), please adjust to your own time zone
+const int   daylightOffset_sec = 3600; //Number of seconds offset for UTC time +1(3600 s = 1h), please adjust to your own time zone
 
 const char* time_zone = "CET-1CEST,M3.5.0,M10.5.0/3";  // TimeZone rule for Europe/Rome including daylight adjustment rules (optional)
 
@@ -23,6 +23,7 @@ void printLocalTime()
     return;
   }
   Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
+  //this part prints time in LCD
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print(&timeinfo, "%b %d %Y");
