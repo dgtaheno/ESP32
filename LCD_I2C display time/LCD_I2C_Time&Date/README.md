@@ -108,7 +108,7 @@ You will need some basic electronic and programming knowledge, but I will try to
 
 Hardware:
 
-[![Hardware Name Screen Shot][hardware-screenshot]](LCD_I2C display time/LCD_I2C_Time&Date/pictures/circuit.jpg)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/dgtaheno/ESP32/tree/main/LCD_I2C%20display%20time)
 
 - [ESP32DEVKIT c V4 board](https://www.amazon.de/s?k=esp32+devkitc+v4&sprefix=ESP32+devkit%2Caps%2C135&ref=nb_sb_ss_ts-doa-p_1_12)
   (or any similar ESP32 board)
@@ -167,11 +167,12 @@ Once ESP 32 DEVKIT C V4 is powered with 5 V, the program will automatically star
 
 The program works as follows:
 
-[![Hardware diagram][software-diagram]](LCD_I2C display time/LCD_I2C_Time&Date/pictures/circuit.jpg)
+[![LCD Picture][hardware-screenshot]](https://github.com/dgtaheno/ESP32/tree/main/LCD_I2C%20display%20time)
 
 You should be able to see on the display Date & Time:
 
-[![LCD picture][hardware-screenshot](LCD_I2C display time/LCD_I2C_Time&Date/pictures/example.jpg)
+[![Hardware diagram][software-diagram]](https://github.com/dgtaheno/ESP32/tree/main/LCD_I2C%20display%20time)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
