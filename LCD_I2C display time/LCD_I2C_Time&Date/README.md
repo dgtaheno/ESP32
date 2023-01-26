@@ -259,6 +259,6 @@ Resources I found helpful and would like to give credit to.
 [license-url]: https://github.com/dgtaheno/ESP32/blob/f916f11d36e570b180b5d8b98a3717dbaca18b02/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dgtaheno/?locale=en_US
-[product-screenshot]: /LCD_I2C_Time&Date/pictures/circuit.jpg
-[hardware-screenshot]:/LCD_I2C_Time&Date/pictures/circuit.jpg
-[software-diagram]: /LCD_I2C_Time&Date/pictures/example.jpg
+[product-screenshot]: https://github.com/dgtaheno/ESP32/blob/main/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/circuit.jpg?raw=true
+[hardware-screenshot]:https://github.com/dgtaheno/ESP32/blob/main/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/circuit.jpg?raw=true
+[software-diagram]: https://github.com/dgtaheno/ESP32/blob/main/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/example.jpg?raw=true
