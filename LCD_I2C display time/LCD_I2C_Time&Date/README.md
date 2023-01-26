@@ -108,31 +108,30 @@ You will need some basic electronic and programming knowledge, but I will try to
 
 Hardware:
 
-[![Hardware Name Screen Shot][hardware-screenshot]](https://github.com/dgtaheno/Imail/blob/f141852d8f7f2de7912e0b6193a638d107ab5735/pictures/circuit.png)
+[![Hardware Name Screen Shot][hardware-screenshot]](https://github.com/dgtaheno/ESP32/blob/2a350ac2ebc3fa3ca714f41b51d98dc3e420d6f5/LCD_I2C display time/Project pictures/circuit.jpg)
 
-- [ESP32CAM board](https://www.amazon.de/-/en/Bluetooth-Development-4-75V-5-25V-Nodemcu-Raspberry/dp/B097Y93P8D/ref=sr_1_7?crid=7IEVZD93IYB4&keywords=esp32+cam&qid=1652453797&s=ce-de&sprefix=esp32cam%2Celectronics%2C103&sr=1-7)
-  (or any similar ESP32cam board)
-- [REED sensor](https://www.amazon.de/-/en/sensor-surface-mounting-magnetic-normally/dp/B09QFWPHS9/ref=sr_1_22?keywords=schilfsensor&qid=1652454096&sr=8-22&th=1) (Installed on Mailbox trap door)
-- [Arduino UNO](https://www.amazon.de/-/en/8541585410-Arduino-UNO-Rev3-SMD/dp/B007R9TUJE/ref=sr_1_4?crid=2YE81LX2UPPKP&keywords=arduino+uno&qid=1652511606&sprefix=arduino+uno%2Caps%2C386&sr=8-4) or any other serial interface to program the board.
+- [ESP32DEVKIT c V4 board](https://www.amazon.de/s?k=esp32+devkitc+v4&sprefix=ESP32+devkit%2Caps%2C135&ref=nb_sb_ss_ts-doa-p_1_12)
+  (or any similar ESP32 board)
 
-See related [link](https://community.platformio.org/t/how-can-i-use-arduino-as-uart-to-usb-converter-while-uploading-code-to-esp32cam/26464) for serial programming with Arduino UNO.
+See related [link](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-devkitc.html) for serial programming with Arduino IDE.
 
 Software:
 
-I programmed ESP32CAM using VSCODE + PlatformIO extension but it is also possible to do it with Arduino IDE.
+I programmed ESP32 DevKit C V4 using Arduino IDE but it is also possible to do it with VS Code + Platform IO extension.
 
-In VS Code it is necessary to install the Espressif 32 platform v 4.3.0(4.2.0 did not work).
+Please follow this [ESP32 Arduino IDE Tutorial](https://www.iottechtrends.com/getting-started-with-esp32-wroom-devkitc/) so you can learn how to program it.
 
 Please note that the following libraries should be installed in the project:
 
-- [Universal Telegram Bot](https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot)
-- [Arduinojson](https://arduinojson.org)
+- [Wifi.h](https://www.arduino.cc/reference/en/libraries/wifi/)
+- [Time.h](https://www.arduino.cc/reference/en/libraries/time/)
+- [sntp.h](https://github.com/esp8266/Arduino/blob/master/tools/sdk/include/sntp.h)
+- [LiquidCrystal_I2C.h](https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library/blob/master/LiquidCrystal_I2C.h)
 
-It is also a requirement to create a Telegram Bot, see this [link](https://core.telegram.org/bots#3-how-do-i-create-a-bot) where the entire process is described with the aim of getting the bot TOKEN, which will be required later.
 
 ### Installation
 
-Prior to flash the board with the program it is necessary to adjust Imail-0.1.0-Alpha in src.
+Prior to flash the board with the program it is necessary to adjust LCD_I2C_Time&Date.ino in src.
 
 The required part to adjust is the following:
 
@@ -142,36 +141,21 @@ The required part to adjust is the following:
 
   #define WIFI_PASSWORD "**\*\*\*\***\*\***\*\*\*\***"
 
-- // Telegram BOT Token (Get from Botfather)
+- // LiquidCrystal_I2C lcd(0x27, 16, 2); //(Address, number of characters per line, number of lines)
 
-  #define BOT_TOKEN "**\*\***\*\*\*\***\*\***"
-
-- // Use @myidbot (IDBot) to find out the chat ID of an individual or a group
-  // Also note that you need to click "start" on a bot before it can
-  // message you
-
-  #define CHAT_ID "**\*\***\*\*\***\*\***"
+  If you don´t know your lcd address you can follow the instructions [here](https://todbot.com/blog/2009/11/29/i2cscanner-pde-arduino-as-i2c-bus-scanner/) to scan for the address.
 
 With your own parameters, please note that Wifi credential must be filled with your WIFI data.
 
-Bot token is obtained when creating the bot(mentioned before).
+Once you have adapted the code and connected, click on ESP32 Devkit C V4 "rst" button which will put the board in upload mode.
 
-To get the Chat_ID, please follow the instructions mentioned [here](https://www.alphr.com/find-chat-id-telegram/).
+Click on upload in Arduino IDE and once it is uploaded it is ready to go.
 
-Please revise Platformio.ini and adjust your USB port if required:
+ESP32 DEVKIT C V4 will reboot when finished.
 
-- monitor_port = COM7
-- upload_port = COM7
+You can now disconnect the board from computer if you don not need to serial monitor anymore and just connect as per connection diagram in hardware section.
 
-Once you have adapted the code and connected, click on ESP32CAM "rst" button which will put the board in upload mode.
-
-Click on upload in platformio and once it is uploaded it is ready to go.
-
-ESP32CAM will reboot when finished.
-
-You can now make disconnect arduino if you don not need to serial monitor anymore and just connect as per connection diagram in hardware section.
-
-Now I-mail is ready to work.
+Now LCD I2C Date & Time is ready to work.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -179,23 +163,15 @@ Now I-mail is ready to work.
 
 ## Usage
 
-Once ESP32CAM is powered with 5 V, the program will automatically start.
+Once ESP 32 DEVKIT C V4 is powered with 5 V, the program will automatically start.
 
 The program works as follows:
 
-[![Software block diagram][software-diagram]](https://github.com/dgtaheno/Imail/blob/f141852d8f7f2de7912e0b6193a638d107ab5735/pictures/block%20diagram.png)
+[![Hardware diagram][software-diagram]](https://github.com/dgtaheno/ESP32/blob/main/LCD_I2C display time/Project pictures/circuit.jpg)
 
-Additionally, in all the steps, the following commands can we executed from Telegram:
+You should be able to see on the display Date & Time:
 
-/check : Check if Imail is online.
-
-/getid : Check Telegram chat ID for configuration purpose.
-
-/status : Check if mailbox trap door is open or closed.
-
-/help : Shows available commands.
-
-Please note that this commands are valid only if CHAT_ID configured, if not only /getid command will work for configuration purpose.
+[![LCD picture][LCD-picture]](https://github.com/dgtaheno/ESP32/blob/2a350ac2ebc3fa3ca714f41b51d98dc3e420d6f5/LCD_I2C display time/Project pictures/example.jpg)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -203,23 +179,22 @@ Please note that this commands are valid only if CHAT_ID configured, if not only
 
 ## Roadmap
 
-- [x] Create Imail-0.1.0-Alpha.cpp & Platformio.ini
+- [x] Create LCD_I2C_Time&Date.ino
 - [x] Include all libraries dependencies
-  - [x] Universal Telegram Bot
-  - [x] Arduinojson
+  - [x] Wifi.h
+  - [x] Time.h
+  - [x] sntp.h
+  - [x] LiquidCrystal_I2C.h
+
 - [x] Design and build all hardware configuration.
-- [x] Upload program to ESP32CAM.
+- [x] Upload program to ESP32 DevKIT C V4.
 - [x] Test
 - [x] Create README.md
 
 - [ ] Upgrade with new features:
-  - Pictures when receiving mail & also when receiving /photo Telegram command implementation.
-  - Battery monitoring notifications and Telegram battery check command.
-  - Add a second reed sensor so when opening the mailbox to collect the mail sends a notification that the mail has been collected.
-  - Add WiFi manager function for initial configuration via an Access Point instead of hard coding.
-  - Introduce OTA features, so not necessary serial interface to program it.
+  - Not planned
 
-See the [open issues](https://github.com/dgtaheno/Imail/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/dgtaheno/ESP32/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -254,7 +229,7 @@ Distributed under the GNU License. See `LICENSE` for more information.
 
 David García-Taheno Fernández - dgtaheno@hotmail.com
 
-Project Link: [https://github.com/dgtaheno/Imail](https://github.com/dgtaheno/Imail)
+Project Link: [https://github.com/dgtaheno/ESP32/tree/main/LCD_I2C%20display%20time](https://github.com/dgtaheno/ESP32/tree/main/LCD_I2C%20display%20time)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -265,29 +240,25 @@ Project Link: [https://github.com/dgtaheno/Imail](https://github.com/dgtaheno/Im
 Resources I found helpful and would like to give credit to.
 
 - [Best README.md template](https://github.com/othneildrew/Best-README-Template)
-- [Universal Telegram Bot](https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot/)
-- [ArduinoJson.h](https://arduinojson.org/)
 - [Rui Santos](https://github.com/RuiSantosdotme/ESP32-Course)
-- [CS50](https://cs50.harvard.edu/college/2022/spring/)
-- [Bot father](https://core.telegram.org/bots#1-what-can-i-do-with-bots)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/dgtaheno/Imail.svg?style=for-the-badge
-[contributors-url]: https://github.com/dgtaheno/Imail/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/dgtaheno/Imail.svg?style=for-the-badge
-[forks-url]: https://github.com/dgtaheno/Imail/network/members
-[stars-shield]: https://img.shields.io/github/stars/dgtaheno/Imail.svg?style=for-the-badge
-[stars-url]: https://github.com/dgtaheno/Imail/stargazers
-[issues-shield]: https://img.shields.io/github/issues/dgtaheno/Imail.svg?style=for-the-badge
-[issues-url]: https://github.com/dgtaheno/Imail/issues
-[license-shield]: https://img.shields.io/github/license/dgtaheno/Imail.svg?style=for-the-badge
-[license-url]: https://github.com/dgtaheno/Imail/blob/88ad9d26f0a27b99d039913ee49984c01356c6fc/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/dgtaheno/ESP32.svg?style=for-the-badge
+[contributors-url]: https://github.com/dgtaheno/ESP32/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/dgtaheno/ESP32.svg?style=for-the-badge
+[forks-url]: https://github.com/dgtaheno/ESP32/network/members
+[stars-shield]: https://img.shields.io/github/stars/dgtaheno/ESP32.svg?style=for-the-badge
+[stars-url]: https://github.com/dgtaheno/ESP32/stargazers
+[issues-shield]: https://img.shields.io/github/issues/dgtaheno/ESP32.svg?style=for-the-badge
+[issues-url]: https://github.com/dgtaheno/ESP32/issues
+[license-shield]: https://img.shields.io/github/license/dgtaheno/ESP32.svg?style=for-the-badge
+[license-url]: https://github.com/dgtaheno/ESP32/blob/f916f11d36e570b180b5d8b98a3717dbaca18b02/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dgtaheno/?locale=en_US
-[product-screenshot]: /pictures/Imail.jpg
-[hardware-screenshot]: /pictures/circuit.png
-[software-diagram]: /pictures/block_diagram.png
+[product-screenshot]: /pictures/example.jpg
+[hardware-screenshot]: /pictures/circuit.jpg
+[software-diagram]: /pictures/circuit.jpg
