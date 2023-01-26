@@ -108,7 +108,7 @@ You will need some basic electronic and programming knowledge, but I will try to
 
 Hardware:
 
-[![Hardware Name Screen Shot][hardware-screenshot]](https://github.com/dgtaheno/ESP32/blob/52555a4f461ef37b45af659f3b6e6c576568df58/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/circuit.jpg)
+[![Hardware Name Screen Shot][hardware-screenshot]](LCD_I2C display time/LCD_I2C_Time&Date/pictures/circuit.jpg)
 
 - [ESP32DEVKIT c V4 board](https://www.amazon.de/s?k=esp32+devkitc+v4&sprefix=ESP32+devkit%2Caps%2C135&ref=nb_sb_ss_ts-doa-p_1_12)
   (or any similar ESP32 board)
@@ -167,11 +167,11 @@ Once ESP 32 DEVKIT C V4 is powered with 5 V, the program will automatically star
 
 The program works as follows:
 
-[![Hardware diagram][software-diagram]](https://github.com/dgtaheno/ESP32/blob/52555a4f461ef37b45af659f3b6e6c576568df58/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/circuit.jpg)
+[![Hardware diagram][software-diagram]](LCD_I2C display time/LCD_I2C_Time&Date/pictures/circuit.jpg)
 
 You should be able to see on the display Date & Time:
 
-[![LCD picture][LCD-picture]](https://github.com/dgtaheno/ESP32/blob/52555a4f461ef37b45af659f3b6e6c576568df58/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/example.jpg)
+[![LCD picture][hardware-screenshot](LCD_I2C display time/LCD_I2C_Time&Date/pictures/example.jpg)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -259,6 +259,6 @@ Resources I found helpful and would like to give credit to.
 [license-url]: https://github.com/dgtaheno/ESP32/blob/f916f11d36e570b180b5d8b98a3717dbaca18b02/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dgtaheno/?locale=en_US
-[product-screenshot]: https://github.com/dgtaheno/ESP32/blob/52555a4f461ef37b45af659f3b6e6c576568df58/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/example.jpg
-[hardware-screenshot]: https://github.com/dgtaheno/ESP32/blob/52555a4f461ef37b45af659f3b6e6c576568df58/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/circuit.jpg
-[software-diagram]: https://github.com/dgtaheno/ESP32/blob/52555a4f461ef37b45af659f3b6e6c576568df58/LCD_I2C%20display%20time/LCD_I2C_Time&Date/pictures/circuit.jpg
+[product-screenshot]: LCD_I2C display time/LCD_I2C_Time&Date/pictures/circuit.jpg
+[hardware-screenshot]: LCD_I2C display time/LCD_I2C_Time&Date/pictures/circuit.jpg
+[software-diagram]: LCD_I2C display time/LCD_I2C_Time&Date/pictures/example.jpg
