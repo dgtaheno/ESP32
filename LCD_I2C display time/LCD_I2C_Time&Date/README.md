@@ -19,29 +19,27 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/dgtaheno/Imail">
+  <a href="https://github.com/dgtaheno">
     <img src="https://github.com/dgtaheno/Imail/blob/master/pictures/logo.png?raw=true" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">I-mail 0.1.0-Alpha</h3>
-
-[Video Demo](https://youtu.be/sqTqYwuiOkI)
+  <h3 align="center">LCD I2C Date & Time display</h3>
 
   <p align="left">
-    Got bored of checking the mailbox everyday, so let´s IoT it.
+    Do you want to have actual date and time to the second online updated? Then that´s your project.
     <br />
   <p align="left">
-    Using ESP32CAM hardware and a reed sensor for the mailbox trap door, now I receive notifications in Telegram if I receive mail or if the mailbox trap door is blocked.
+    Using ESP32DevKit C V4 hardware and a LCD display with I2C module, now I have time under control.
     <br />
   
-  <a href="https://github.com/dgtaheno/Imail"><strong>Explore the docs »</strong></a>
+  <a href="https://github.com/dgtaheno/ESP32/tree/main/LCD_I2C%20display%20time/LCD_I2C_Time%26Date"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/dgtaheno/Imail">View Demo</a>
+    <a href="https://github.com/dgtaheno/ESP32/tree/main/LCD_I2C%20display%20time/LCD_I2C_Time%26Date">View Demo</a>
     ·
-    <a href="https://github.com/dgtaheno/Imail/issues">Report Bug</a>
+    <a href="https://github.com/dgtaheno/ESP32/issues">Report Bug</a>
     ·
-    <a href="https://github.com/dgtaheno/Imail/issues">Request Feature</a>
+    <a href="https://github.com/dgtaheno/ESP32/issues">Request Feature</a>
   </p>
 </div>
 
@@ -75,24 +73,20 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/dgtaheno/Imail)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/dgtaheno/ESP32/tree/main/LCD_I2C%20display%20time)
 
-I´m requested by [CS50](https://cs50.harvard.edu/college/2022/spring/project/) to provide the final course project, hence was thinking during a couple of days and nothing was coming to my mind.
+I´m in a process of learning further about Embedded software and in the process I found thi interesting project which will allow us to learn about Online Time update and I2C displays.
 
-But one day, doing my daily housework, I went and check my empty mailbox, this brought to my mind the idea that if something would notify me when receiving mail, I would save some minutes/hours by the end of the year, so it seems like an interesting project to invest some time and present it as my [CS50](https://cs50.harvard.edu/college/2022/spring/project/) final project.
-
-Why should you create your own I-mail?
+Why should you create your own LCD I2C Time display?
 
 - It is a cool way to invest your time.
-- You will hopefully increase your knowledge on C programming, ESP32, VS Code and so many other tools.
-- You will save time receiving notifications from your mailbox directly on your phone.(that´s cool!)
+- You will hopefully increase your knowledge on C++ programming, ESP32, Arduino and so many other tools.
+- You will have always updated time under control.(that´s cool!)
 - It´s cheap, and try to make it as easy as possible.
 
-In order to upload I-mail the following files were generated for this project:
+In order to upload LCD I2C Time display the following files were generated for this project:
 
-<li><a href="https://github.com/dgtaheno/Imail/blob/a6a089b052d4ea0516b42fa168947979fec48a59/.vscode/extensions.json">vscode/extensions.json</a></li>
-<li><a href="https://github.com/dgtaheno/Imail/blob/a6a089b052d4ea0516b42fa168947979fec48a59/src/Imail-0.1.0-Alpha.cpp">src/Imail-0.1.0-Alpha.cpp</a></li>
-<li><a href="https://github.com/dgtaheno/Imail/blob/a6a089b052d4ea0516b42fa168947979fec48a59/platformio.ini">platformio.ini</a></li>
+<li><a href="https://github.com/dgtaheno/ESP32/blob/71145b9ea02182c14f01afcd3006fc98b02ad644/LCD_I2C display time/LCD_I2C_Time&Date/LCD_I2C_Time&Date.ino">LCD_I2C_Time&Date.ino</a></li>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -100,11 +94,7 @@ In order to upload I-mail the following files were generated for this project:
 
 This is the software used to create this project:
 
-- [Visual Studio Core](https://code.visualstudio.com/)
-- [Platform.io](https://platformio.org/install/ide?install=vscode)(VS Code extension)
-- [Bot father](https://core.telegram.org/bots#1-what-can-i-do-with-bots)(Telegram bot)
-- [Universal Telegram Bot](https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot)(Telegram ESP32 bot API)
-- [ArduinoJson](https://arduinojson.org/)(ESP32 serialization)
+- [Arduino IDE](https://www.arduino.cc/en/software)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
